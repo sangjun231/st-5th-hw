@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
+import TextsContext from "../context/TextsContext";
 
-function TextInput({ onAddText }) {
+function TextInput() {
   const [inputValue, setInputValue] = useState("");
+  const { onAddText } = useContext(TextsContext);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
